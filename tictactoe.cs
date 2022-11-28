@@ -25,8 +25,8 @@ namespace UmutEroglutry2
 
                 GameEngine(umutGame, currentPlayer);
 
-             
-                gameStatus = CheckWinner(umutGame);
+
+                
 
             } while (gameStatus.Equals(0));
 
@@ -41,22 +41,7 @@ namespace UmutEroglutry2
             }
         }
 
-        private static int CheckWinner(char[] umutGame)
-        {
-            
-            if (IsGameWinner(umutGame))
-            {
-                return 1;
-            }
-
-           
-            if (IsGameDraw(umutGame))
-            {
-                return 2;
-            }
-            
-            return 0;
-        }
+     
 
         private static bool IsGameDraw(char[] umutGame)
         {
@@ -71,52 +56,7 @@ namespace UmutEroglutry2
                    umutGame[8] != '9';
         }
 
-        private static bool IsGameWinner(char[] umutGame)
-        {
-            if (IsumutGameTheSame(umutGame, 0, 1, 2))
-            {
-                return true;
-            }
-
-            if (IsumutGameTheSame(umutGame, 3, 4, 5))
-            {
-                return true;
-            }
-
-            if (IsumutGameTheSame(umutGame, 6, 7, 8))
-            {
-                return true;
-            }
-
-            if (IsumutGameTheSame(umutGame, 0, 3, 6))
-            {
-                return true;
-            }
-
-            if (IsumutGameTheSame(umutGame, 1, 4, 7))
-            {
-                return true;
-            }
-
-            if (IsumutGameTheSame(umutGame, 2, 5, 8))
-            {
-                return true;
-            }
-
-            if (IsumutGameTheSame(umutGame, 0, 4, 8))
-            {
-                return true;
-            }
-
-            if (IsumutGameTheSame(umutGame, 2, 4, 6))
-            {
-                return true;
-            }
-
-            return false;
-        }
-
-        private static bool IsumutGameTheSame(char[] testumutGame, int pos1, int pos2, int pos3)
+               private static bool IsumutGameTheSame(char[] testumutGame, int pos1, int pos2, int pos3)
         {
             return testumutGame[pos1].Equals(testumutGame[pos2]) && testumutGame[pos2].Equals(testumutGame[pos3]);
         }
@@ -127,7 +67,7 @@ namespace UmutEroglutry2
 
             do
             {
-               
+
                 string userInput = Console.ReadLine();
 
                 if (!string.IsNullOrEmpty(userInput) &&
@@ -175,14 +115,14 @@ namespace UmutEroglutry2
         }
 
         static void HeadsUpDisplay(int PlayerNumber)
-           
+
         {
-            
+
             Console.WriteLine("********************************");
             Console.WriteLine("Welcome to the Umut Eroglu Game!");
             Console.WriteLine("********************************");
             Console.ForegroundColor = ConsoleColor.Blue;
-            
+
             Console.WriteLine("********************************");
             Console.WriteLine("Player 1: X");
             Console.WriteLine("Player 2: O");
@@ -196,7 +136,7 @@ namespace UmutEroglutry2
 
         static void DrawGameboard(char[] umutGame)
         {
-          
+
 
             Console.WriteLine($"         {umutGame[0]} | {umutGame[1]} | {umutGame[2]}        ");
             Console.WriteLine("         ---+---+---                                           ");
